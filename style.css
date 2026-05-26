@@ -216,10 +216,14 @@ section h2 {
   background: var(--navy);
 }
 
+.endorsements .container {
+  max-width: 1200px;
+}
+
 .quotes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
 }
 
 .quote-card {
@@ -227,19 +231,19 @@ section h2 {
   border: 1px solid var(--white-faint);
   border-top: 3px solid var(--blue);
   border-radius: 8px;
-  padding: 28px 24px;
+  padding: 32px 28px;
 }
 
 .quote-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .quote-photo {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -251,20 +255,20 @@ section h2 {
 .quote-text {
   font-style: italic;
   color: var(--white-dim);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
   margin: 0;
 }
 
 .quote-author {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--white);
-  margin: 0 0 3px 0;
+  margin: 0 0 4px 0;
 }
 
 .quote-role {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--blue-light);
   margin: 0;
 }
