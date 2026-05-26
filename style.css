@@ -226,20 +226,51 @@ section h2 {
   text-align: center;
 }
 
+.argument .container {
+  max-width: 720px;
+}
+
 .argument .lead {
   font-size: 1.15rem;
   color: var(--white-dim);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .argument p {
   color: var(--white-dim);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-size: 1rem;
+  line-height: 1.8;
 }
 
 .argument strong {
+  color: var(--blue-light);
+}
+
+.thinkers-list {
+  color: var(--blue-light);
+  font-size: 1.05rem;
+  line-height: 2;
+  margin-bottom: 48px;
+  letter-spacing: 0.01em;
+}
+
+.argument-statement {
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--white);
+  line-height: 1.35;
+  margin: 0 auto 40px;
+  letter-spacing: -0.01em;
+}
+
+.argument-epigram {
+  font-style: italic;
+  font-size: 1.1rem !important;
+  color: var(--white) !important;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--white-faint);
 }
 
 /* ---- ENDORSEMENTS ---- */
