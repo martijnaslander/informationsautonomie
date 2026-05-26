@@ -104,54 +104,54 @@ body {
 }
 
 .hero-quote {
-  border-left: 3px solid var(--blue);
-  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 32px;
   margin: 0 auto 48px;
-  max-width: 620px;
+  max-width: 720px;
   text-align: left;
-  font-size: 1.05rem;
   font-style: italic;
   color: var(--white-dim);
   background: var(--white-faint);
+  border-left: 3px solid var(--blue);
   border-radius: 0 8px 8px 0;
 }
 
+.hero-quote-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid var(--blue);
+  flex-shrink: 0;
+  filter: grayscale(15%);
+}
+
+.hero-quote-body {
+  flex: 1;
+}
+
 .hero-quote-text {
-  margin: 0 0 20px 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 16px 0;
 }
 
 .hero-quote cite {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  font-style: normal;
-  border-top: 1px solid var(--white-faint);
-  padding-top: 16px;
-}
-
-.hero-quote-photo {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  border: 2px solid var(--blue);
-  flex-shrink: 0;
-  filter: grayscale(20%);
-}
-
-.hero-quote-attribution {
-  display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
+  font-style: normal;
 }
 
-.hero-quote-attribution strong {
+.hero-quote cite strong {
   color: var(--white);
   font-size: 0.95rem;
 }
 
-.hero-quote-attribution span {
+.hero-quote cite span {
   color: var(--blue-light);
   font-size: 0.82rem;
 }
