@@ -338,17 +338,36 @@ section h2 {
 
 /* ---- ORDER ---- */
 .order {
-  background: var(--navy-mid);
-  text-align: center;
+  background: var(--navy-light);
+}
+
+.order-inner {
+  display: flex;
+  gap: 72px;
+  align-items: center;
+}
+
+.order-cover {
+  flex: 0 0 220px;
+}
+
+.order-cover img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+}
+
+.order-content {
+  flex: 1;
+}
+
+.order-content h2 {
+  text-align: left;
 }
 
 .order p {
   color: var(--white-dim);
   margin-bottom: 32px;
-}
-
-.order-buttons {
-  margin-bottom: 24px;
 }
 
 .order-links {
@@ -365,6 +384,12 @@ section h2 {
 .order-links a:hover {
   color: var(--white);
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .order-inner { flex-direction: column; gap: 40px; text-align: center; }
+  .order-cover { flex: 0 0 auto; width: 180px; }
+  .order-content h2 { text-align: center; }
 }
 
 /* ---- FOOTER ---- */
