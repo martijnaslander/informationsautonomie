@@ -250,6 +250,10 @@ section h2 {
   max-width: 1200px;
 }
 
+.endorsements h2 {
+  text-align: center;
+}
+
 .quotes-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
