@@ -116,14 +116,44 @@ body {
   border-radius: 0 8px 8px 0;
 }
 
+.hero-quote-text {
+  margin: 0 0 20px 0;
+}
+
 .hero-quote cite {
-  display: block;
-  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-style: normal;
-  font-size: 0.85rem;
-  font-weight: 600;
+  border-top: 1px solid var(--white-faint);
+  padding-top: 16px;
+}
+
+.hero-quote-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--blue);
+  flex-shrink: 0;
+  filter: grayscale(20%);
+}
+
+.hero-quote-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-quote-attribution strong {
+  color: var(--white);
+  font-size: 0.95rem;
+}
+
+.hero-quote-attribution span {
   color: var(--blue-light);
-  letter-spacing: 0.05em;
+  font-size: 0.82rem;
 }
 
 /* ---- BUTTONS ---- */
