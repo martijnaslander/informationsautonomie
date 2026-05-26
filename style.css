@@ -223,6 +223,7 @@ section h2 {
 /* ---- ARGUMENT ---- */
 .argument {
   background: var(--navy-mid);
+  text-align: center;
 }
 
 .argument .lead {
