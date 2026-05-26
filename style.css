@@ -230,29 +230,69 @@ section h2 {
   padding: 28px 24px;
 }
 
+.quote-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.quote-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--blue);
+  flex-shrink: 0;
+  filter: grayscale(30%);
+}
+
 .quote-text {
   font-style: italic;
   color: var(--white-dim);
   font-size: 0.95rem;
-  margin-bottom: 20px;
   line-height: 1.6;
+  margin: 0;
 }
 
 .quote-author {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--white);
-  margin-bottom: 4px;
+  margin: 0 0 3px 0;
 }
 
 .quote-role {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--blue-light);
+  margin: 0;
 }
 
 /* ---- ABOUT ---- */
 .about {
   background: var(--navy-light);
+}
+
+.about-inner {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.about-photo {
+  flex: 0 0 220px;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 8px;
+  filter: grayscale(100%);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.about-text {
+  flex: 1;
 }
 
 .about p {
@@ -323,6 +363,8 @@ footer a {
   .hero-inner { flex-direction: column-reverse; gap: 40px; }
   .hero-cover { flex: 0 0 auto; width: 220px; }
   .hero-text { text-align: center; }
+  .about-inner { flex-direction: column; }
+  .about-photo { flex: 0 0 auto; width: 180px; }
 }
 
 @media (max-width: 600px) {
