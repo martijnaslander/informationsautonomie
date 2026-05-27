@@ -3,188 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Information Autonomy — The missing precondition for data sovereignty in an era of vendor lock-in and AI. By Martijn Aslander. Foreword by Fons Trompenaars.">
-  <title>Information Autonomy — Martijn Aslander</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Information Autonomy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gate {
+      text-align: center;
+      padding: 48px 32px;
+      max-width: 360px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    p {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #fff;
+      outline: none;
+      text-align: center;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+    input[type="password"]:focus {
+      border-color: #555;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: 500;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #e0e0e0; }
+    .error {
+      margin-top: 12px;
+      color: #ff6b6b;
+      font-size: 0.85rem;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="ribbon">Dummy Site — tijdelijk</div>
+  <div class="gate">
+    <h1>Information Autonomy</h1>
+    <p>This site is not public yet.</p>
+    <input type="password" id="pw" placeholder="Password" autofocus>
+    <button onclick="check()">Enter</button>
+    <div class="error" id="err">Incorrect password</div>
+  </div>
+  <script>
+    // Check if already authenticated
+    if (sessionStorage.getItem('ia_auth') === '1') {
+      window.location.replace('slides.html');
+    }
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <p class="author-name">Martijn Aslander</p>
-      <h1 class="book-title">Information Autonomy</h1>
-      <p class="subtitle">The missing precondition for data sovereignty in an era of vendor lock-in and AI</p>
-      <div class="hero-cover">
-        <img src="cover.png" alt="Information Autonomy — book cover" />
-      </div>
-      <blockquote class="hero-quote">
-        <img src="photos/fons-trompenaars.jpg" alt="Fons Trompenaars" class="hero-quote-photo" />
-        <div class="hero-quote-body">
-          <p class="hero-quote-text">"There are books that add something to what we already know. There are books that rearrange what we thought we knew. And then, more rarely, there are books that make visible the thing that was shaping us while we were looking elsewhere."</p>
-          <cite>
-            <strong>Fons Trompenaars</strong>
-            <span>Author of <em>Riding the Waves of Culture</em> — Foreword</span>
-          </cite>
-        </div>
-      </blockquote>
-      <a href="#order" class="btn-primary"><i class="fa-brands fa-amazon"></i> Pre-order the book</a>
-    </div>
-  </section>
+    function check() {
+      var pw = document.getElementById('pw').value;
+      if (pw === 'open') {
+        sessionStorage.setItem('ia_auth', '1');
+        window.location.replace('slides.html');
+      } else {
+        document.getElementById('err').style.display = 'block';
+        document.getElementById('pw').value = '';
+        document.getElementById('pw').focus();
+      }
+    }
 
-  <!-- ARGUMENT -->
-  <section class="argument">
-    <div class="container">
-      <h2>The format is the message.</h2>
-      <p class="lead">For 250 years, thinkers have circled the same problem without naming it.</p>
-      <p class="thinkers-list">
-        <span>Georges-Louis Buffon</span> · <span>Paul Otlet</span> · <span>Vannevar Bush</span> · <span>Marshall McLuhan</span> · <span>Peter Drucker</span> · <span>Robert Karasek</span> · <span>Daniel Kahneman</span> · <span>Gloria Mark</span> · <span>David Allen</span> · <span>Clay Shirky</span>
-      </p>
-      <p class="argument-statement">None of them named the layer that was blocking the vision.</p>
-      <p>In this book, Martijn Aslander shows where all these lines converge — in a layer so ordinary it has become invisible: <strong>the file format</strong>.</p>
-      <p>When information is stored in formats that computers cannot read without the software that created them, autonomy becomes a slogan. Workers are asked to be self-directed while being structurally denied the informational conditions for self-direction. The cause is embedded in the format. The symptom appears in the body.</p>
-      <p class="argument-epigram">This is not a book against technology. It is a book against technological unconsciousness.</p>
-    </div>
-  </section>
-
-  <!-- ENDORSEMENTS -->
-  <section class="endorsements">
-    <div class="container">
-      <h2>Praise for <em>Information Autonomy</em></h2>
-      <div class="quotes-grid">
-
-        <div class="quote-card">
-          <img src="photos/david-allen.jpg" alt="David Allen" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">David Allen</p>
-              <p class="quote-role">Author of <em>Getting Things Done</em></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-card">
-          <img src="photos/jorge-arango.jpg" alt="Jorge Arango" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">Jorge Arango</p>
-              <p class="quote-role">Author of <em>Living in Information</em></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-card">
-          <img src="photos/nick-milo.jpg" alt="Nick Milo" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">Nick Milo</p>
-              <p class="quote-role">Founder of Linking Your Thinking</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-card">
-          <img src="photos/roland-allen.jpg" alt="Roland Allen" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">Roland Allen</p>
-              <p class="quote-role">Author of <em>The Notebook</em></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-card">
-          <img src="photos/gary-wolf.jpg" alt="Gary Wolf" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">Gary Wolf</p>
-              <p class="quote-role">Co-founder Quantified Self, <em>Wired</em></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-card">
-          <img src="photos/seth-godin.jpg" alt="Seth Godin" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">Seth Godin</p>
-              <p class="quote-role">Author of <em>Purple Cow</em>, <em>This Is Marketing</em></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-card">
-          <img src="photos/tim-sanders.jpg" alt="Tim Sanders" class="quote-photo" onerror="this.style.display='none'" />
-          <div class="quote-body">
-            <p class="quote-text">"[Endorsement coming]"</p>
-            <div class="quote-attribution">
-              <p class="quote-author">Tim Sanders</p>
-              <p class="quote-role">Author of <em>Love is the Killer App</em></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="container">
-      <h2>About the author</h2>
-      <div class="about-inner">
-        <div class="about-photo">
-          <img src="martijn.jpg" alt="Martijn Aslander" />
-        </div>
-        <div class="about-text">
-          <p>Martijn Aslander has spent his entire adult life — and much of his childhood — living inside information systems. He got his first Commodore 64 at twelve and started building lists of things that mattered to him. He has never stopped.</p>
-          <p>Today he is a knowledge strategist, public speaker with over 2,500 stage appearances, and the co-founder of <strong>Digital Fitness</strong> — a movement that helps desk workers reclaim their relationship with technology. He is also the founder of the <strong>PKM Summit</strong>, an annual gathering of thinkers and practitioners at the frontier of personal knowledge management. Over fifteen years he has tested his ideas in the field: with police forces, government agencies, and large organisations across Europe, South Africa, Iran, and Pakistan.</p>
-          <p>Then came the stroke. During months of forced stillness, something became visible that decades of work had been circling without ever naming: the file format as the root cause of organisational dysfunction. Workers are asked to be self-directed while being structurally denied the informational conditions for self-direction. The cause is embedded in the format. The symptom appears in the body.</p>
-          <p><em>Information Autonomy</em> is the result.</p>
-          <p class="foreword-note">Foreword by <strong>Fons Trompenaars</strong> — author of <em>Riding the Waves of Culture</em>, 100,000+ academic citations, adviser to Fortune 500 companies worldwide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ORDER -->
-  <section class="order" id="order">
-    <div class="container">
-      <div class="order-inner">
-        <div class="order-cover">
-          <img src="cover.png" alt="Information Autonomy book cover" />
-        </div>
-        <div class="order-content">
-          <h2>Get the book</h2>
-          <p>Available as e-book, paperback and hardcover.</p>
-          <a href="#" class="btn-primary btn-large"><i class="fa-brands fa-amazon"></i> Pre-order on Amazon</a>
-          <p class="order-links">
-            <a href="#">Kindle edition</a> &nbsp;·&nbsp;
-            <a href="#">Paperback</a> &nbsp;·&nbsp;
-            <a href="#">Hardcover</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© 2026 Martijn Aslander — <a href="https://martijnaslander.international">martijnaslander.international</a></p>
-    </div>
-  </footer>
-
+    document.getElementById('pw').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') check();
+    });
+  </script>
 </body>
 </html>
