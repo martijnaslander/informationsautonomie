@@ -462,6 +462,24 @@ footer a {
   text-decoration: none;
 }
 
+/* ---- COMING SOON TALEN ---- */
+.coming-soon-langs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.lang-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--white-faint);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.02em;
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
   .hero-cover { flex: 0 0 auto; width: 220px; max-width: 100%; }
