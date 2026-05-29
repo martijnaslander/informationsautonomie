@@ -464,17 +464,17 @@ footer a {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
-  .hero-inner { flex-direction: column-reverse; gap: 40px; }
-  .hero-cover { flex: 0 0 auto; width: 220px; }
-  .hero-text { text-align: center; }
+  .hero-cover { flex: 0 0 auto; width: 220px; max-width: 100%; }
+  .hero-quote { flex-direction: column; gap: 16px; }
   .about-inner { flex-direction: column; }
-  .about-photo { flex: 0 0 auto; width: 180px; }
+  .about-photo { flex: 0 0 auto; width: 180px; margin: 0 auto; }
   .quotes-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
   .book-title { font-size: 3.2rem; }
   .hero-quote { padding: 16px 18px; }
+  .order-buttons { flex-direction: column; align-items: stretch; }
   section { padding: 56px 0; }
   section h2 { font-size: 1.6rem; }
 }
